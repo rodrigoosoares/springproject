@@ -2,6 +2,7 @@ package com.rodrigo.springproject.gateways.repositories.mysql;
 
 import com.rodrigo.springproject.entities.DataInfo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,6 +10,8 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class DataInfoRepository {
+
+    private final NamedParameterJdbcTemplate jdbcTemplate;
 
     public List<DataInfo> getAllDataInfo() {
         return List.of(
